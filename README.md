@@ -6,3 +6,4 @@
 
 This is a helper repository containing Gulp-based tasks you can use both on the server side and client side.
 It's not something you are supposed to use individually, it's rather a lib [boar-task-server](https://github.com/emartech/boar-tasks-server) and [boar-tasks-client](https://github.com/emartech/boar-tasks-client) is using as a dependency. 
+
