@@ -17,7 +17,10 @@ module.exports = function(gulp) {
       var stylint = require('gulp-stylint');
 
       return gulp.src(pattern)
-        .pipe(stylint(config));
+        .pipe(stylint(config))
+        .pipe(stylint.reporter('fail', {
+          failOnWarning: true
+        }));
     },
 
     jade: function(pattern) {
