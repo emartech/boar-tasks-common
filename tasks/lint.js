@@ -10,7 +10,8 @@ module.exports = function(gulp) {
         .pipe(eslint({
           useEslintrc: true
         }))
-        .pipe(eslint.format());
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
     },
 
     styl: function(pattern, config) {
