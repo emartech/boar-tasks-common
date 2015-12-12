@@ -19,6 +19,7 @@ module.exports = function(gulp) {
 
       return gulp.src(pattern)
         .pipe(stylint(config))
+        .pipe(stylint.reporter())
         .pipe(stylint.reporter('fail', {
           failOnWarning: true
         }));
