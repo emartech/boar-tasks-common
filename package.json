@@ -4,13 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release-patch": "npm version patch -m 'chore(package): update version to %s'",
-    "release-minor": "npm version minor -m 'chore(package): update version to %s'",
-    "release-major": "npm version major -m 'chore(package): update version to %s'"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/emartech/boar-tasks-common.git"
+    "url": "git+https://github.com/emartech/boar-tasks-common.git"
   },
   "author": "Emarsys",
   "license": "MIT",
