@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "validate-commit-msg": "validate-commit-msg"
   },
+  "pre-commit": [
+    "validate-commit-msg"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emartech/boar-tasks-common.git"
@@ -22,6 +26,10 @@
     "gulp-prompt": "0.1.2",
     "gulp-stylint": "3.0.0",
     "yargs": "3.30.0"
+  },
+  "devDependencies": {
+    "pre-commit": "1.1.2",
+    "validate-commit-message": "3.0.1"
   },
   "homepage": "https://github.com/emartech/boar-tasks-common"
 }
