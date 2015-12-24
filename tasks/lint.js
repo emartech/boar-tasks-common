@@ -14,7 +14,7 @@ module.exports = function(gulp) {
         .pipe(eslint.failAfterError());
     },
 
-    styl: function(pattern, config) {
+    stylesheets: function(pattern, config) {
       var stylint = require('gulp-stylint');
 
       return gulp.src(pattern)
@@ -25,7 +25,7 @@ module.exports = function(gulp) {
         }));
     },
 
-    jade: function(pattern) {
+    templates: function(pattern) {
       var pugLint = require('gulp-pug-lint');
 
       return gulp.src(pattern)
