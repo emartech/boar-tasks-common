@@ -26,10 +26,10 @@ module.exports = function(gulp) {
     },
 
     jade: function(pattern) {
-      var jadeLint = require('gulp-jade-lint');
+      var pugLint = require('gulp-pug-lint');
 
       return gulp.src(pattern)
-        .pipe(jadeLint());
+        .pipe(pugLint());
     }
   };
 
