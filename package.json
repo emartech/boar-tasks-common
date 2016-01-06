@@ -28,7 +28,7 @@
     "gulp-eslint": "1.1.0",
     "gulp-exec": "2.1.2",
     "gulp-prompt": "0.1.2",
-    "gulp-pug-lint": "0.1.5",
+    "gulp-pug-lint": "0.1.6",
     "gulp-stylint": "3.0.0",
     "yargs": "3.30.0"
   },
