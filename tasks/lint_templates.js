@@ -6,7 +6,7 @@ var PugLint = require('pug-lint');
 var path = require('path');
 var _ = require('lodash');
 
-module.exports = function(pattern, cb) {
+module.exports = function(pattern) {
   return new Promise(function(resolve, reject) {
     var rc = new RcLoader('.pug-lintrc');
     var errors = glob.sync(pattern).reduce(function(err, file) {
@@ -32,16 +32,12 @@ module.exports = function(pattern, cb) {
     }, []);
 
     if (errors.length === 0) {
-      if (cb) cb();
       resolve();
     } else {
       errors.forEach(function(error) {
         console.log(error);
       });
-
-      var err = new Error('Pug lint failed');
-      if (cb) cb(err);
-      reject(err);
+      reject(new Error('Pug lint failed'));
     }
   });
 };

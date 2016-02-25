@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(pattern, cb) {
+module.exports = function(pattern) {
   return new Promise(function(resolve, reject) {
     var CLIEngine = require('eslint').CLIEngine;
     var eslint = new CLIEngine();
@@ -12,12 +12,9 @@ module.exports = function(pattern, cb) {
     console.log(eslint.getFormatter()(errors));
 
     if (report.errorCount === 0) {
-      if (cb) cb();
       resolve();
     } else {
-      var err = new Error('ESLint failed');
-      if (cb) cb(err);
-      reject(err);
+      reject(new Error('ESLint failed'));
     }
   });
 };

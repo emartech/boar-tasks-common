@@ -4,7 +4,7 @@ var stylint = require('stylint');
 var glob = require('glob');
 var fs = require('fs');
 
-module.exports = function(config, cb) {
+module.exports = function(config) {
   return new Promise(function(resolve, reject) {
     var files = glob.sync(config.pattern);
 
@@ -21,15 +21,11 @@ module.exports = function(config, cb) {
         },
         done: function() {
           if (this.cache.warnings.length === 0) {
-            if (cb) cb();
             resolve();
           } else {
             console.log(this.cache.msg + '\n');
             console.log(this.cache.warnings.join('\n\n'));
-
-            var err = new Error('Stylint failed');
-            if (cb) cb(err);
-            reject(err);
+            reject(new Error('Stylint failed'));
           }
         }
       })

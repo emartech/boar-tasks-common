@@ -1,10 +1,9 @@
 'use strict';
 
-module.exports = function (gulp, config) {
+module.exports = function(config) {
 
   return {
-
-    clean: function () {
+    clean: function() {
       return new Promise(function(resolve, reject) {
         require('del')([config.build.distPath + '**/*'], function(err) {
           if (err) return reject(err);
@@ -14,18 +13,25 @@ module.exports = function (gulp, config) {
     },
 
     deploy: function() {
-      var prompt = require('gulp-prompt');
+      var gulp = require('gulp');
       var exec = require('gulp-exec');
+      var confirm = require('inquirer-confirm');
 
-      return gulp.src('gulpfile.js')
-        .pipe(prompt.confirm({
-          message: 'Do you really want to deploy to production?',
-          default: false
-        }))
-        .pipe(exec('git pull origin master; git push origin master;git push origin master:production'))
-        .pipe(exec.reporter({ err: true, stderr: true, stdout: true }));
+      return confirm('Do you really want to deploy to production?')
+        .then(function confirmed() {
+          return new Promise(function(resolve, reject) {
+            var stream = gulp.src('gulpfile.js')
+              .pipe(exec('git pull origin master; git push origin master;git push origin master:production'))
+              .pipe(exec.reporter({ err: true, stderr: true, stdout: true }));
+            stream.on('end', function() {
+              resolve();
+            });
+            stream.on('error', function(err) {
+              reject(err);
+            });
+          });
+        });
     }
-
   };
 
 };
