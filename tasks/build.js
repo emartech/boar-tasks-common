@@ -4,8 +4,13 @@ module.exports = function (gulp, config) {
 
   return {
 
-    clean: function (cb) {
-      require('del')([config.build.distPath + '**/*'], cb);
+    clean: function () {
+      return new Promise(function(resolve, reject) {
+        require('del')([config.build.distPath + '**/*'], function(err) {
+          if (err) return reject(err);
+          resolve();
+        });
+      });
     },
 
     deploy: function() {
