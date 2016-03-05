@@ -1,4 +1,4 @@
-var argv = require('yargs').argv;
+'use strict';
 
 var Config = {};
 
