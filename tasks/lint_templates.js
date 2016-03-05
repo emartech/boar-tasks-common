@@ -1,6 +1,6 @@
 'use strict';
 
-let glob = require('glob');
+var glob = require('glob');
 var RcLoader = require('rcloader');
 var PugLint = require('pug-lint');
 var path = require('path');

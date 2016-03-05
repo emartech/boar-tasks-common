@@ -2,7 +2,10 @@
 
 module.exports = {
   config: require('./tasks/config'),
-  build: require('./tasks/build'),
+  build: {
+    deploy: require('./tasks/deploy'),
+    clean: require('/tasks/clean')
+  },
   lint: {
     scripts: require('./tasks/lint_scripts'),
     stylesheets: require('./tasks/lint_stylesheets'),
