@@ -30,6 +30,15 @@ module.exports = function(gulp) {
 
       return gulp.src(pattern)
         .pipe(pugLint());
+    },
+
+    nsp: function(packageJsonPath, cb) {
+      var gulpNsp = require('gulp-nsp');
+      gulpNsp({
+        package: packageJsonPath,
+        stopOnError: false,
+        output: 'summary'
+      }, cb);
     }
   };
 
