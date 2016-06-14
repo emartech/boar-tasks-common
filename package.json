@@ -24,7 +24,7 @@
     "url": "https://github.com/emartech/boar-tasks-common/issues"
   },
   "dependencies": {
-    "del": "1.2.0",
+    "del": "2.2.0",
     "gulp-eslint": "2.0.0",
     "gulp-exec": "2.1.2",
     "gulp-nsp": "2.4.0",

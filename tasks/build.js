@@ -4,8 +4,9 @@ module.exports = function (gulp, config) {
 
   return {
 
-    clean: function (cb) {
-      require('del')([config.build.distPath + '**/*'], cb);
+    clean: function () {
+      const del = require('del');
+      return del([config.build.distPath + '**/*']);
     },
 
     deploy: function() {
