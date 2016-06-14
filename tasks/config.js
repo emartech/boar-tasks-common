@@ -1,9 +1,9 @@
-var argv = require('yargs').argv;
+'use strict';
 
-var Config = {};
-
-Config.build = {
-  distPath: 'dist/'
+var Config = {
+  build: {
+    distPath: 'dist/'
+  }
 };
 
 module.exports = Config;

@@ -29,8 +29,7 @@
     "gulp-exec": "2.1.2",
     "gulp-pug-lint": "0.1.6",
     "gulp-prompt": "0.2.0",
-    "gulp-stylint": "3.0.0",
-    "yargs": "3.30.0"
+    "gulp-stylint": "3.0.0"
   },
   "devDependencies": {
     "pre-commit": "1.1.3",
