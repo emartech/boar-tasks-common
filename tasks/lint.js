@@ -26,10 +26,11 @@ module.exports = function(gulp) {
     },
 
     templates: function(pattern) {
-      var pugLint = require('gulp-pug-lint');
+      var linter = require('gulp-pug-linter');
 
       return gulp.src(pattern)
-        .pipe(pugLint());
+        .pipe(linter())
+        .pipe(linter.reporter());
     },
 
     nsp: function(packageJsonPath, cb) {
