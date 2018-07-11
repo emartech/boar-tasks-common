@@ -3,17 +3,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "validate-commit-msg": "validate-commit-msg",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
-  "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    }
-  },
-  "pre-commit": [
-    "validate-commit-msg"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emartech/boar-tasks-common.git"
@@ -33,10 +24,9 @@
     "gulp-stylint": "4.0.0"
   },
   "devDependencies": {
-    "pre-commit": "1.2.2",
-    "semantic-release": "6.3.2",
-    "stylint-stylish": "1.4.0",
-    "validate-commit-message": "3.0.1"
+    "@semantic-release/release-notes-generator": "6.0.12",
+    "semantic-release": "15.6.3",
+    "stylint-stylish": "1.4.1"
   },
   "homepage": "https://github.com/emartech/boar-tasks-common"
 }
