@@ -18,7 +18,6 @@
     "del": "3.0.0",
     "gulp-eslint": "5.0.0",
     "gulp-exec": "3.0.2",
-    "gulp-nsp": "3.0.1",
     "gulp-prompt": "1.0.1",
     "gulp-pug-linter": "0.5.1",
     "gulp-stylint": "4.0.2"
