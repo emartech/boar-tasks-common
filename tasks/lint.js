@@ -31,15 +31,6 @@ module.exports = function(gulp) {
       return gulp.src(pattern)
         .pipe(linter())
         .pipe(linter.reporter());
-    },
-
-    nsp: function(packageJsonPath, cb) {
-      var gulpNsp = require('gulp-nsp');
-      gulpNsp({
-        package: packageJsonPath,
-        stopOnError: false,
-        output: 'summary'
-      }, cb);
     }
   };
 
