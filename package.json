@@ -27,5 +27,8 @@
     "semantic-release": "15.6.3",
     "stylint-stylish": "1.4.1"
   },
-  "homepage": "https://github.com/emartech/boar-tasks-common"
+  "homepage": "https://github.com/emartech/boar-tasks-common",
+  "engines": {
+    "node": "8.11.3"
+  }
 }
